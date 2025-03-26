@@ -58,6 +58,11 @@
         ],
         "keybindings": [
             {
+                "command": "vscgettext.copyOriginalToUntranslated",
+                "key": "alt+d",
+                "when": "editorTextFocus && resourceLangId == po"
+            },
+            {
                 "command": "vscgettext.moveToNextUntranslated",
                 "key": "alt+n",
                 "when": "editorTextFocus && resourceLangId == po"

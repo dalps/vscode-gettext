@@ -10,11 +10,18 @@ import {
   moveToPreviousFuzzyMessage,
   moveToNextUntranslatedOrFuzzyMessage,
   moveToPreviousUntranslatedOrFuzzyMessage,
+  copyOriginalToUntranslated,
 } from "./lib";
 import provideDefinition from "./provide_definition";
 import { activateStatusBar } from "./status";
 
 export async function activate(context: vscode.ExtensionContext) {
+  context.subscriptions.push(
+    vscode.commands.registerTextEditorCommand(
+      "vscgettext.copyOriginalToUntranslated",
+      copyOriginalToUntranslated
+    )
+  );
   context.subscriptions.push(
     vscode.commands.registerTextEditorCommand(
       "vscgettext.moveToNextUntranslated",

@@ -85,11 +85,11 @@ function parseMessage(document: vscode.TextDocument, lineno: number): Message {
   return new MessageParser(document, lineno).parse();
 }
 
-function isUntranslated(message: Message): boolean {
+export function isUntranslated(message: Message): boolean {
   return !isTranslated(message);
 }
 
-function isTranslated(message: Message): boolean {
+export function isTranslated(message: Message): boolean {
   return (
     (message.msgstr && message.msgstr !== "") ||
     (message.msgstrPlural &&
